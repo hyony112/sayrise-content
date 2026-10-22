@@ -1,0 +1,48 @@
+# 스프레드시트의 확언 목록을 검사해서 GitHub Pages(docs/affirmations.json)에 배포한다.
+# 실행: 저장소 → Actions → "확언 배포" → Run workflow
+# 준비: Settings → Secrets and variables → Actions → Variables에 SHEET_CSV_URL
+#       (Google 시트 → 파일 → 공유 → 웹에 게시 → CSV 링크)
+name: 확언 배포
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-affirmations
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 시트 내려받기
+        env:
+          SHEET_CSV_URL: ${{ vars.SHEET_CSV_URL }}
+        run: |
+          test -n "$SHEET_CSV_URL" || { echo "::error::SHEET_CSV_URL 변수가 없어요"; exit 1; }
+          curl -fsSL "$SHEET_CSV_URL" -o sheet.csv
+
+      - name: 검사하고 JSON 만들기
+        run: |
+          set -o pipefail
+          python3 scripts/affirmations.py build sheet.csv \
+            --out docs/affirmations.json --previous docs/affirmations.json 2>&1 | tee result.txt
+          { echo '### 확언 배포 결과'; echo '```'; cat result.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 바뀌었으면 배포
+        run: |
+          if git diff --quiet -- docs/affirmations.json; then
+            echo "바뀐 내용이 없어서 배포하지 않아요."
+            exit 0
+          fi
+          VERSION=$(python3 -c "import json;print(json.load(open('docs/affirmations.json'))['version'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/affirmations.json
+          git commit -m "확언 목록 v${VERSION} 배포"
+          git push

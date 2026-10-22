@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-20T00:39:05Z",
+  "affirmations": [
+    {
+      "id": "conf-01",
+      "category": "자신감",
+      "text": "나는 오늘도 나를 믿고 한 걸음 나아간다",
+      "active": true
+    },
+    {
+      "id": "conf-02",
+      "category": "자신감",
+      "text": "나는 어려운 일도 차분하게 해낼 수 있는 사람이다",
+      "active": true
+    },
+    {
+      "id": "conf-03",
+      "category": "자신감",
+      "text": "내 목소리와 생각은 충분히 가치가 있다",
+      "active": true
+    },
+    {
+      "id": "day-01",
+      "category": "하루 시작",
+      "text": "오늘 하루는 내가 선택한 대로 흘러간다",
+      "active": true
+    },
+    {
+      "id": "day-02",
+      "category": "하루 시작",
+      "text": "나는 맑은 마음으로 새로운 아침을 맞이한다",
+      "active": true
+    },
+    {
+      "id": "day-03",
+      "category": "하루 시작",
+      "text": "오늘 나는 가장 중요한 일에 집중한다",
+      "active": true
+    },
+    {
+      "id": "grat-01",
+      "category": "감사",
+      "text": "나는 지금 가진 것에 감사하며 하루를 연다",
+      "active": true
+    },
+    {
+      "id": "grat-02",
+      "category": "감사",
+      "text": "평범한 아침이 내게 주어진 것에 감사한다",
+      "active": true
+    },
+    {
+      "id": "grat-03",
+      "category": "감사",
+      "text": "나를 응원하는 사람들이 곁에 있어 든든하다",
+      "active": true
+    },
+    {
+      "id": "grow-01",
+      "category": "성장",
+      "text": "실수는 나를 멈추게 하지 않고 더 자라게 한다",
+      "active": true
+    },
+    {
+      "id": "grow-02",
+      "category": "성장",
+      "text": "나는 어제보다 조금 더 나은 내가 되어 간다",
+      "active": true
+    },
+    {
+      "id": "grow-03",
+      "category": "성장",
+      "text": "작은 노력이 모여 내가 원하는 삶을 만든다",
+      "active": true
+    },
+    {
+      "id": "care-01",
+      "category": "마음 돌봄",
+      "text": "나는 충분히 잘하고 있고 나를 아끼는 법을 안다",
+      "active": true
+    },
+    {
+      "id": "care-02",
+      "category": "마음 돌봄",
+      "text": "나는 나 자신에게 친절하게 말하기로 한다",
+      "active": true
+    },
+    {
+      "id": "care-03",
+      "category": "마음 돌봄",
+      "text": "불안한 마음도 지나가고 나는 다시 평온해진다",
+      "active": true
+    },
+    {
+      "id": "rel-01",
+      "category": "관계",
+      "text": "나는 오늘 만나는 사람들에게 따뜻한 말을 건넨다",
+      "active": true
+    },
+    {
+      "id": "rel-02",
+      "category": "관계",
+      "text": "나는 다른 사람의 이야기를 끝까지 들어준다",
+      "active": true
+    },
+    {
+      "id": "rel-03",
+      "category": "관계",
+      "text": "나는 좋은 사람들과 함께하는 오늘이 기대된다",
+      "active": true
+    }
+  ]
+}
